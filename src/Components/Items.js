@@ -75,7 +75,7 @@ const Items = (props) => {
           <div className='container'>
             {
              props.cat.map((items)=>
-             {
+             { 
                if(items.Name.toLowerCase().includes(props.search)){
                 return(
                   <div className='box' key={items.id}>
@@ -98,8 +98,9 @@ const Items = (props) => {
                       <h5>MRP: ₹{items.Price}</h5>
                     </div>
                   </div>
-                )  
+                )
                }
+               return null;
              }) 
             }
 
