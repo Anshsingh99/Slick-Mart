@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import{AiOutlineClose} from 'react-icons/ai';
 import './Cart.css';
 const Cart = (props) => {
   const incqty = (product) => 
