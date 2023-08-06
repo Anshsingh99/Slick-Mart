@@ -25,18 +25,7 @@ const App = () => {
     axios.get("https://notlegit991.pythonanywhere.com/slickmart/products/get", {
     }).then(res=>{
       let temp = [...prod]
-      res.data.forEach(data => {
-        let fields = data['fields']
-        temp.push({
-          id:data['pk'],
-          Desc: fields['description'],
-          Name: fields['name'],
-          Price: fields['price'],
-          cat: fields['category'],
-          Img: fields['img_url']
-        })
-      });
-      // res.data.map((data)=>{
+      // res.data.forEach(data => {
       //   let fields = data['fields']
       //   temp.push({
       //     id:data['pk'],
@@ -47,6 +36,18 @@ const App = () => {
       //     Img: fields['img_url']
       //   })
       // });
+      res.data.map((data)=>{
+        let fields = data['fields']
+        temp.push({
+          id:data['pk'],
+          Desc: fields['description'],
+          Name: fields['name'],
+          Price: fields['price'],
+          cat: fields['category'],
+          Img: fields['img_url']
+        })
+        return null
+      });
       setProd(temp);
       setCat(temp);
     }
