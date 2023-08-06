@@ -100,7 +100,7 @@ const Items = (props) => {
                   </div>
                 )
                }
-               return null;
+              
              }) 
             }
 
