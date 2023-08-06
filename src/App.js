@@ -24,7 +24,7 @@ const App = () => {
   useEffect(()=>{
     axios.get("https://notlegit991.pythonanywhere.com/slickmart/products/get", {
     }).then(res=>{
-      let temp = [prod]
+      let temp = [...prod]
       res.data.map((data)=>{
         let fields = data['fields']
         temp.push({
@@ -35,11 +35,13 @@ const App = () => {
           cat: fields['category'],
           Img: fields['img_url']
         })
+        return 0;
       });
       setProd(temp);
       setCat(temp);
-    }
+    } 
     ); 
+    // eslint-disable-next-line
   }, []);
   const view = (product) => 
   {
